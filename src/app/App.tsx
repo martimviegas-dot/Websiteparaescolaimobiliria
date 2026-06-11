@@ -47,7 +47,7 @@ export default function App() {
 
   // Coloca o teu PDF na pasta public/ do projeto com o nome "ebook.pdf"
   // e este link funcionará automaticamente para todos os visitantes.
-  const EBOOK_URL = "/ebook.pdf";
+  const EBOOK_URL = "https://drive.google.com/uc?export=download&id=1zEtRQRmX5_D0oN56_Ku5pQfWpqifMIAJ";
 
   // Formspree: cria conta gratuita em formspree.io e substitui "YOUR_FORM_ID"
   // pelo ID do teu formulário (ex: "xpwzabcd") para receberes os leads por email.
@@ -70,10 +70,7 @@ export default function App() {
       });
       if (res.ok) {
         setSubmitted(true);
-        const link = document.createElement("a");
-        link.href = EBOOK_URL;
-        link.download = "Portugal_Real_Estate_School_eBook.pdf";
-        link.click();
+        window.open(EBOOK_URL, "_blank");
       } else {
         setFormError("Ocorreu um erro. Tenta novamente ou contacta-nos diretamente.");
       }
